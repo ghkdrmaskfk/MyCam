@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_home"
+        android:title="@string/menu_home"
+        android:icon="@drawable/vt_home_icon" />
+    <item android:id="@+id/action_search"
+        android:title="@string/menu_search"
+        android:icon="@drawable/vt_search_icon" />
+    <item android:id="@+id/action_market"
+        android:title="@string/menu_market"
+        android:icon="@drawable/vt_market_icon" />
+    <item android:id="@+id/action_community"
+        android:title="@string/menu_community"
+        android:icon="@drawable/vt_community_icon" />
+    <item android:id="@+id/action_my_page"
+        android:title="@string/menu_home"
+        android:icon="@drawable/vt_my_page_icon" />
+</menu>

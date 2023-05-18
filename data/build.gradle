@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+    id("kotlin-parcelize")
 }
 
 android {
@@ -13,6 +16,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'API_BASE_URL', '"http://apis.data.go.kr/"'
+        buildConfigField 'String', 'API_KEY', '"CsTEM4NzXdB17EW1cfl+RX2xeN3cxB1OOzqUtFZYmWML7n/snikNAtcdG+hSsKa4vRljqcMxZni8nPsamNhr4Q=="'
     }
 }
 
@@ -30,4 +36,20 @@ dependencies {
 
     // mockito 3
     testImplementation 'org.mockito:mockito-core:3.2.0'
+
+    // hilt
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-compiler:2.44'
+
+    // retrofit2
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+
+    // okHttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+
+    // gson converter
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    // paging
+    implementation "androidx.paging:paging-runtime:3.1.1"
 }
