@@ -1,17 +1,13 @@
 package com.hoon.mycam.main.home
 
-import android.content.ClipData.Item
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.hoon.data.lookup.model.HomeRecordItem
 import com.hoon.domain.lookup.model.CampingBasedInfoVo
-import com.hoon.mycam.R
 import com.hoon.mycam.databinding.RvCampingInfoBinding
 
 class HomeRvAdapter(private val navController: NavController): PagingDataAdapter<CampingBasedInfoVo, RecyclerView.ViewHolder>(diffUtil) {
@@ -49,8 +45,10 @@ class HomeRvAdapter(private val navController: NavController): PagingDataAdapter
             }
         }
 
-        fun detailViewClicked(view: View) {
-            navController.navigate(R.id.action_homeFragment_to_homeDetailFragment)
+        fun detailViewClicked(data: CampingBasedInfoVo) {
+            Log.e("sadasdasd", data.addr1.toString())
+            val action = HomeFragmentDirections.actionHomeFragmentToHomeDetailFragment(data)
+            navController.navigate(action)
         }
     }
 }

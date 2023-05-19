@@ -54,6 +54,13 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="heading_12" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/wanju_daedun_mountain</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
     <style name="normal_14" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/wanju_nuliche</item>
         <item name="android:includeFontPadding">false</item>

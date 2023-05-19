@@ -1,9 +1,13 @@
 package com.hoon.domain.lookup.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
 data class CampingBasedInfoItemsVo (val items: CampingBasedInfoItemVo)
 
 data class CampingBasedInfoItemVo(val item: List<CampingBasedInfoVo>)
 
+@Parcelize
 data class CampingBasedInfoVo(val contentId: String?,
                               val facltNm: String?,
                               val lineIntro: String?,
@@ -84,4 +88,4 @@ data class CampingBasedInfoVo(val contentId: String?,
                               val tourEraCl: String?,
                               val firstImageUrl: String?,
                               val createdtime: String?,
-                              val modifiedtime: String?)
+                              val modifiedtime: String?) : Parcelable

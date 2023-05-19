@@ -12,12 +12,23 @@ import com.bumptech.glide.request.RequestOptions
 
 object CommonBindingAdapters{
     @JvmStatic
-    @BindingAdapter("urlImage")
+    @BindingAdapter("urlRoundImage")
     fun ImageView.setRoundUrlImage(imageUrl: String?) {
         imageUrl?.let {
             Glide.with(this)
                 .load(it)
                 .transform(CenterCrop(), RoundedCorners(14))
+                .error(R.drawable.vt_no_image_icon)
+                .into(this)
+        }
+    }
+    @JvmStatic
+    @BindingAdapter("urlImage")
+    fun ImageView.setUrlImage(imageUrl: String?) {
+        imageUrl?.let {
+            Glide.with(this)
+                .load(it)
+                .transform(CenterCrop())
                 .error(R.drawable.vt_no_image_icon)
                 .into(this)
         }

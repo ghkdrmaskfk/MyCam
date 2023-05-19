@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_white"
-        android:onClick="@{campingVH::detailViewClicked}">
+        android:onClick="@{() -> campingVH.detailViewClicked(campingBasedItem)}">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_iv"
@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_margin="4dp"
-            urlImage="@{campingBasedItem.firstImageUrl}"/>
+            urlRoundImage="@{campingBasedItem.firstImageUrl}"/>
 
         <TextView
             android:id="@+id/campsite_name_tv"

@@ -3,6 +3,7 @@ package com.hoon.mycam.main.home
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.hoon.mycam.R
 import com.hoon.mycam.databinding.FragmentMainHomeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,6 +17,10 @@ class HomeDetailFragment: Fragment(R.layout.fragment_main_home_detail) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMainHomeDetailBinding.bind(view)
         _binding?.lifecycleOwner = this
+
+        val args: HomeDetailFragmentArgs by navArgs()
+
+        _binding?.campingBasedItem = args.campingBasedData
 
         binding.apply {
 
