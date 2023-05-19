@@ -12,6 +12,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,8 @@ import com.hoon.mycam.R
 import com.hoon.mycam.databinding.FragmentMainHomeBinding
 import com.hoon.mycam.main.GridSpaceItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -27,7 +30,6 @@ class HomeFragment: Fragment(R.layout.fragment_main_home) {
     private var _binding: FragmentMainHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel: HomeViewModel by viewModels()
-
     lateinit var navController: NavController
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,8 +40,7 @@ class HomeFragment: Fragment(R.layout.fragment_main_home) {
         _binding?.viewModel = viewModel
 
         navController = Navigation.findNavController(view)
-
-        val homeRvAdapter = HomeRvAdapter()
+        val homeRvAdapter = HomeRvAdapter(navController)
 
         binding.apply {
             campingBasedRv.apply {
@@ -67,12 +68,9 @@ class HomeFragment: Fragment(R.layout.fragment_main_home) {
             }
         }
 
-        val action: NavDirections = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
-        binding.root.setOnClickListener {
-            view.findNavController().navigate(action)
+        CoroutineScope(Dispatchers.IO).launch {
+            viewModel.campingBasedInfo()
         }
-
-        viewModel.campingBasedInfo()
     }
 
     override fun onDestroyView() {

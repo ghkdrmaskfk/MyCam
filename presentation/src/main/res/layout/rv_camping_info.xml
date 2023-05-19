@@ -5,12 +5,17 @@
         <variable
             name="campingBasedItem"
             type="com.hoon.domain.lookup.model.CampingBasedInfoVo" />
+
+        <variable
+            name="campingVH"
+            type="com.hoon.mycam.main.home.HomeRvAdapter.CampingVH" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_white">
+        android:background="@color/color_white"
+        android:onClick="@{campingVH::detailViewClicked}">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_iv"
