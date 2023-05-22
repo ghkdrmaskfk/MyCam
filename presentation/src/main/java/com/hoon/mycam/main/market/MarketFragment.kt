@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.hoon.mycam.R
 import com.hoon.mycam.databinding.FragmentMainMarketBinding
-import com.hoon.mycam.main.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

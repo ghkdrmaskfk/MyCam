@@ -3,27 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/inquiryFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.hoon.mycam.main.home.HomeFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_main_home">
-        <action
-            android:id="@+id/action_homeFragment_to_homeDetailFragment"
-            app:destination="@id/homeDetailFragment" />
+        android:id="@+id/inquiryFragment"
+        android:name="com.hoon.mycam.main.inquiry.InquiryFragment"
+        android:label="InquiryFragment"
+        tools:layout="@layout/fragment_main_inquiry">
 
+        <action
+            android:id="@+id/action_inquiryFragment_to_inquiryDetailFragment"
+            app:destination="@id/inquiryDetailFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/homeDetailFragment"
-        android:name="com.hoon.mycam.main.home.HomeDetailFragment"
-        android:label="HomeDetailFragment"
-        tools:layout="@layout/fragment_main_home_detail">
-
+        android:id="@+id/inquiryDetailFragment"
+        android:name="com.hoon.mycam.main.inquiry.InquiryDetailFragment"
+        android:label="InquiryDetailFragment"
+        tools:layout="@layout/fragment_main_inquiry_detail">
         <argument
-            android:name="campingBasedData"
-            app:argType="com.hoon.domain.lookup.model.CampingBasedInfoVo" />
+            android:name="basedInfoVo"
+            app:argType="com.hoon.domain.inquiry.model.BasedInfoVo" />
     </fragment>
 </navigation>

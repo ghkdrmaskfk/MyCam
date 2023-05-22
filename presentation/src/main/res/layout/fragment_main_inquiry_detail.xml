@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="basedItem"
+            type="com.hoon.domain.inquiry.model.BasedInfoVo" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/camping_image_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="vertical"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/main_iv"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                app:layout_constraintWidth_percent="1"-->
+<!--                app:layout_constraintHeight_percent="0.5"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                urlImage="@{basedItem.firstImageUrl}"/>-->
+
+            <TextView
+                android:id="@+id/campsite_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/camping_image_rv"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="6dp"
+                android:text="@{basedItem.facltNm}"
+                android:gravity="center"
+                style="@style/heading_14"/>
+
+            <TextView
+                android:id="@+id/address_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/campsite_name_tv"
+                android:layout_marginTop="4dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="@{basedItem.addr1}"
+                android:gravity="center"
+                style="@style/normal_sub_10"/>
+
+            <TextView
+                android:id="@+id/in_duty_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/address_tv"
+                android:layout_marginTop="4dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:layout_marginBottom="6dp"
+                android:text="@{basedItem.induty}"
+                android:gravity="center"
+                style="@style/normal_sub_10"/>
+
+            <TextView
+                android:id="@+id/sbrs_cl_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/in_duty_tv"
+                android:layout_marginTop="4dp"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:layout_marginBottom="6dp"
+                android:text="@{basedItem.sbrsCl}"
+                android:gravity="center"
+                style="@style/normal_sub_10"/>
+
+            <TextView
+                android:id="@+id/phone_number_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sbrs_cl_tv"
+                android:layout_marginTop="4dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="@{basedItem.tel}"
+                android:gravity="center"
+                style="@style/normal_sub_10"/>
+
+            <TextView
+                android:id="@+id/line_intro_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phone_number_tv"
+                android:layout_marginTop="8dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@{basedItem.lineIntro}"
+                android:gravity="center"
+                style="@style/heading_12"/>
+
+            <TextView
+                android:id="@+id/intro_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_intro_tv"
+                android:layout_marginTop="8dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@{basedItem.intro}"
+                android:gravity="center"
+                style="@style/normal_12"/>
+
+            <TextView
+                android:id="@+id/homepage_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/intro_tv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:linksClickable="true"
+                android:autoLink="web"
+                android:layout_marginTop="8dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@{basedItem.homepage}"
+                android:gravity="center"
+                style="@style/normal_12"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
